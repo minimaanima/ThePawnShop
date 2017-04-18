@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using PawnShop.CommunicationService.ModelFactories;
 using PawnShop.Data.DTOs;
 using Startup.Pages;
 using Startup.SwitchingService;
@@ -40,7 +41,8 @@ namespace Startup
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ClientDto obj = ((FrameworkElement) sender).DataContext as ClientDto;
-            Switcher.Switch(new AddContractPage(obj));
+            var contracts = ContractFactory.GetContractsByClientsName(obj.FullName);
+            Switcher.Switch(new ContractsPage(contracts));
         }
     }
 }

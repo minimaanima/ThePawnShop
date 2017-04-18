@@ -16,3 +16,9 @@ D:\SoftUni\TeamProject\PawnShop\PawnShop\PawnShop.Models\bin\Debug\PawnShop.Mode
 D:\SoftUni\TeamProject\PawnShop\PawnShop\PawnShop.Models\obj\Debug\PawnShop.Models.csprojResolveAssemblyReference.cache
 D:\SoftUni\TeamProject\PawnShop\PawnShop\PawnShop.Models\obj\Debug\PawnShop.Models.exe
 D:\SoftUni\TeamProject\PawnShop\PawnShop\PawnShop.Models\obj\Debug\PawnShop.Models.pdb
+D:\ThePawnShop\PawnShop\PawnShop.Models\bin\Debug\PawnShop.Models.exe.config
+D:\ThePawnShop\PawnShop\PawnShop.Models\bin\Debug\PawnShop.Models.exe
+D:\ThePawnShop\PawnShop\PawnShop.Models\bin\Debug\PawnShop.Models.pdb
+D:\ThePawnShop\PawnShop\PawnShop.Models\obj\Debug\PawnShop.Models.csprojResolveAssemblyReference.cache
+D:\ThePawnShop\PawnShop\PawnShop.Models\obj\Debug\PawnShop.Models.exe
+D:\ThePawnShop\PawnShop\PawnShop.Models\obj\Debug\PawnShop.Models.pdb

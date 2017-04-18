@@ -22,3 +22,15 @@ D:\PawnShop\PawnShop\PawnShop.Data\bin\Debug\EntityFramework.SqlServer.xml
 D:\PawnShop\PawnShop\PawnShop.Data\obj\Debug\PawnShop.Data.csprojResolveAssemblyReference.cache
 D:\PawnShop\PawnShop\PawnShop.Data\obj\Debug\PawnShop.Data.exe
 D:\PawnShop\PawnShop\PawnShop.Data\obj\Debug\PawnShop.Data.pdb
+D:\ThePawnShop\PawnShop\PawnShop.Data\bin\Debug\PawnShop.Data.exe.config
+D:\ThePawnShop\PawnShop\PawnShop.Data\bin\Debug\PawnShop.Data.exe
+D:\ThePawnShop\PawnShop\PawnShop.Data\bin\Debug\PawnShop.Data.pdb
+D:\ThePawnShop\PawnShop\PawnShop.Data\bin\Debug\EntityFramework.dll
+D:\ThePawnShop\PawnShop\PawnShop.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\ThePawnShop\PawnShop\PawnShop.Data\bin\Debug\PawnShop.Models.exe
+D:\ThePawnShop\PawnShop\PawnShop.Data\bin\Debug\PawnShop.Models.pdb
+D:\ThePawnShop\PawnShop\PawnShop.Data\bin\Debug\EntityFramework.xml
+D:\ThePawnShop\PawnShop\PawnShop.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\ThePawnShop\PawnShop\PawnShop.Data\obj\Debug\PawnShop.Data.csprojResolveAssemblyReference.cache
+D:\ThePawnShop\PawnShop\PawnShop.Data\obj\Debug\PawnShop.Data.exe
+D:\ThePawnShop\PawnShop\PawnShop.Data\obj\Debug\PawnShop.Data.pdb

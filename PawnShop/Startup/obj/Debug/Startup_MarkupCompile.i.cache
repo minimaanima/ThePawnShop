@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\SoftUni\TeamProject\PawnShop\PawnShop\Startup\obj\Debug\
+D:\ThePawnShop\PawnShop\Startup\obj\Debug\
 Startup
 none
 false
 DEBUG;TRACE
-D:\SoftUni\TeamProject\PawnShop\PawnShop\Startup\App.xaml
-16-1060378127
+D:\ThePawnShop\PawnShop\Startup\App.xaml
+17-1771648544
 
-31-928543872
-22-1510004804
-MainWindow.xaml;Pages\AddClientPage.xaml;Pages\AddContractPage.xaml;Pages\CashBoxPage.xaml;Pages\ChangeUserPage.xaml;Pages\ClientsPage.xaml;Pages\ContractsPage.xaml;Pages\LoginPage.xaml;Pages\RegisterPage.xaml;Pages\TestPage.xaml;Pages\ViewContractPage.xaml;Styles\Buttons.xaml;Styles\Windows.xaml;Styles\Texts.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;
+32-928042756
+22-263612893
+MainWindow.xaml;Pages\AddClientPage.xaml;Pages\AddContractPage.xaml;Pages\CashBoxPage.xaml;Pages\ChangeUserPage.xaml;Pages\ClientsPage.xaml;Pages\ContractDetailsPage.xaml;Pages\ContractsPage.xaml;Pages\LoginPage.xaml;Pages\RegisterPage.xaml;Pages\TestPage.xaml;Pages\ViewContractPage.xaml;Styles\Buttons.xaml;Styles\Windows.xaml;Styles\Texts.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;
 
-False
+True
 
