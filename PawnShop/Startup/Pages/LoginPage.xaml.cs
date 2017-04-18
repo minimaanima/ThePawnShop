@@ -43,7 +43,7 @@ namespace Startup.Pages
             });
             var user = LoginUser.User.Credentials.Email;
             
-            Switcher.Switch(new TestPage());
+            Switcher.Switch(new ClientsPage());
         }
         private void register_btn(object sender, RoutedEventArgs e)
         {

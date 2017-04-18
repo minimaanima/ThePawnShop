@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PawnShop.CommunicationService.Core;
+using PawnShop.CommunicationService.Interfaces;
 
 namespace Startup.Pages
 {
@@ -22,9 +24,12 @@ namespace Startup.Pages
     /// </summary>
     public partial class RegisterPage : Page,ISwitchable
     {
+        private ICommandParser commandParser;
+
         public RegisterPage()
         {
             InitializeComponent();
+            commandParser = new CommandParser();
         }
         private void backTologin_btn(object sender, RoutedEventArgs e)
         {
@@ -33,6 +38,19 @@ namespace Startup.Pages
         public void UtilizeState(object state)
         {
             throw new NotImplementedException();
+        }
+
+        private void AddButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var officeName = this.officeName.Text;
+            var email = this.usernameReg.Text;
+            var password = this.passwordReg.Password;
+            var confirmedPassword = this.confirmedPassword.Password;
+
+            var command = commandParser.ParseCommand(new[] {"Register",officeName, email, password, confirmedPassword});
+            command.Execute();
+
+            Switcher.Switch(new ClientsPage());
         }
     }
 }

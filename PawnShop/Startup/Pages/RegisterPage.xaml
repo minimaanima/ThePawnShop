@@ -52,9 +52,13 @@
                                 <PasswordBox x:Name="passwordReg" Tag="Password" Margin="0 0 0 30" Height="30" FontSize="20" />
 
 
+                                <!-- Confirmed Password -->
+                                <Label Content="Confir Password" FontSize="18"  />
+                                <PasswordBox x:Name="confirmedPassword" Tag="Confirm Password" Margin="0 0 0 30" Height="30" FontSize="20" />
+
                                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" >
                                     <!-- Next button -->
-                                    <Button Content="Add" HorizontalAlignment="Center" FontSize="20" />
+                                    <Button Content="Add" HorizontalAlignment="Center" FontSize="20" Click="AddButtonClicked"/>
                                     <Label Content="|" Foreground="White"></Label>
                                     <!-- Next button -->
                                     <Button Content="Back" HorizontalAlignment="Center" FontSize="20" Click="backTologin_btn"/>

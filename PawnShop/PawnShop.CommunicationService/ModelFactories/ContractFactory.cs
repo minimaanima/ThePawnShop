@@ -19,12 +19,12 @@ namespace PawnShop.CommunicationService.ModelFactories
             using (var context = new PawnShopContext())
             {
                MapperInitiliazer.InitiliazeContracts();
-
+                context.Users.Attach(LoginUser.User);
                 if (status == Status.All)
                 {
                     var contracts =
                         context.Contracts
-                        //.Where(c => c.Employee.Office.Name == LoginUser.User.Office.Name)
+                        .Where(c => c.Employee.Office.Name == LoginUser.User.Office.Name)
                             .ProjectTo<ContractDto>()
                             .ToList();
 
@@ -44,6 +44,7 @@ namespace PawnShop.CommunicationService.ModelFactories
         {
             using (var context = new PawnShopContext())
             {
+                context.Users.Attach(LoginUser.User);
                 var contract = context.Contracts.Find(contractId);
                 var contractDto = new ContractDto()
                 {
@@ -68,6 +69,7 @@ namespace PawnShop.CommunicationService.ModelFactories
             using (var context = new PawnShopContext())
             {
                 MapperInitiliazer.InitiliazeContracts();
+                context.Users.Attach(LoginUser.User);
 
                 var contracts = context.Contracts.Where(c => c.Employee.Office.Name == LoginUser.User.Office.Name && c.Client.PersonalID == personalId)
                             .ProjectTo<ContractDto>()
@@ -82,6 +84,7 @@ namespace PawnShop.CommunicationService.ModelFactories
             using (var context = new PawnShopContext())
             {
                 MapperInitiliazer.InitiliazeContracts();
+                context.Users.Attach(LoginUser.User);
 
                 var contracts = context.Contracts.Where(c => c.Employee.Office.Name == LoginUser.User.Office.Name && string.Concat(c.Client.FirstName, " ", c.Client.MiddleName, " ", c.Client.LastName) == name)
                             .ProjectTo<ContractDto>()
@@ -95,9 +98,10 @@ namespace PawnShop.CommunicationService.ModelFactories
         {
             using (var context = new PawnShopContext())
             {
+                context.Users.Attach(LoginUser.User);
                 MapperInitiliazer.InitiliazeContracts();
 
-                var contracts = context.Contracts.Where(c => c.Employee.Office.Name == LoginUser.User.Office.Name && c.Employee.Office.Address.Town.Name == town)
+                var contracts = context.Contracts.Where(c => c.Employee.Office.Name == LoginUser.User.Office.Name && c.Client.Address.Town.Name == town)
                             .ProjectTo<ContractDto>()
                             .ToList();
 
@@ -109,6 +113,7 @@ namespace PawnShop.CommunicationService.ModelFactories
         {
             using (var context = new PawnShopContext())
             {
+                context.Users.Attach(LoginUser.User);
                 MapperInitiliazer.InitiliazeContracts();
 
                 var contracts = context.Contracts.Where(c => c.Employee.Office.Name == LoginUser.User.Office.Name && c.Client.Address.Text == address)
@@ -116,6 +121,25 @@ namespace PawnShop.CommunicationService.ModelFactories
                             .ToList();
 
                 return contracts;
+            }
+        }
+
+        public static ContractDetailsDto GetContractDetails(ContractDto contractDto)
+        {
+            using (var context = new PawnShopContext())
+            {
+                context.Users.Attach(LoginUser.User);
+                var employee = context.Contracts.Find(contractDto.ContractId).Employee.Credentials.Email;
+
+                var contractDetails = new ContractDetailsDto()
+                {
+                    Date = contractDto.DateOfRegistrationAndExpiring,
+                    Operator = employee,
+                    ProperyValue = contractDto.PropertyValue.ToString(),
+                    ValueAfterInterest = (contractDto.PropertyValue * contractDto.Interest + contractDto.PropertyValue).ToString()
+                };
+
+                return contractDetails;
             }
         }
     }

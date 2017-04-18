@@ -74,37 +74,71 @@ namespace Startup.Pages
             this.myDataGrid.Columns.Add(new ButtonColumn());
             this.myDataGrid.Columns.Add(new ShowContractsButtonColumn());
         }
-        private void FirstName_GotFocus(object sender, RoutedEventArgs e)
+
+        private void ClientName_GotFocus(object sender, RoutedEventArgs e)
         {
-            firstName.Text = "";
+            clientName.Text = "";
         }
-        private void Lastname_GotFocus(object sender, RoutedEventArgs e)
-        {
-            lastName.Text = "";
-        }
+
         private void PersonalId_GotFocus(object sender, RoutedEventArgs e)
         {
             personalId.Text = "";
         }
+
         private void City_GotFocus(object sender, RoutedEventArgs e)
         {
             city.Text = "";
         }
-        private void FirstName_LostFocus(object sender, RoutedEventArgs e)
+
+        private void ClientName_LostFocus(object sender, RoutedEventArgs e)
         {
-            firstName.Text = "First Name";
+            if (clientName.Text == "")
+            {
+                clientName.Text = "First Name";
+            }
+           
         }
-        private void LastName_LostFocus(object sender, RoutedEventArgs e)
-        {
-            lastName.Text = "Last Name";
-        }
+        
         private void PersonalId_LostFocus(object sender, RoutedEventArgs e)
         {
-            personalId.Text = "Personal Id";
+            if (personalId.Text == "")
+            {
+                personalId.Text = "Personal Id";
+            }
+           
         }
         private void City_LostFocus(object sender, RoutedEventArgs e)
         {
-            city.Text = "City";
+            if (city.Text == null)
+            {
+                city.Text = "City";
+            }
+           
+        }
+
+        public void SearchButtonClick(object sender, RoutedEventArgs e)
+        {
+            var clientName = this.clientName.Text;
+            var personalId = this.personalId.Text;
+            var city = this.city.Text;
+
+            if (clientName != "First Name")
+            {
+                var contracts = ContractFactory.GetContractsByClientsName(clientName);
+                Switcher.Switch(new ContractsPage(contracts));
+            }
+
+            if (personalId != "Personal Id")
+            {
+                var contracts = ContractFactory.GetContractsByClientsPersonalId(int.Parse(personalId));
+                Switcher.Switch(new ContractsPage(contracts));
+            }
+
+            if (city != "City")
+            {
+                var contracts = ContractFactory.GetContractsByTown(city);
+                Switcher.Switch(new ContractsPage(contracts));
+            }
         }
     }
 }

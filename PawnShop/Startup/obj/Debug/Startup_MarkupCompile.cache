@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\ThePawnShop\PawnShop\Startup\App.xaml
-16-1060378127
+17-1771648544
 
-27-252971901
+28-252470785
 22-263612893
-MainWindow.xaml;Pages\AddClientPage.xaml;Pages\AddContractPage.xaml;Pages\CashBoxPage.xaml;Pages\ChangeUserPage.xaml;Pages\ClientsPage.xaml;Pages\ContractsPage.xaml;Pages\LoginPage.xaml;Pages\RegisterPage.xaml;Pages\TestPage.xaml;Pages\ViewContractPage.xaml;Styles\Buttons.xaml;Styles\Windows.xaml;Styles\Texts.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;
+MainWindow.xaml;Pages\AddClientPage.xaml;Pages\AddContractPage.xaml;Pages\CashBoxPage.xaml;Pages\ChangeUserPage.xaml;Pages\ClientsPage.xaml;Pages\ContractDetailsPage.xaml;Pages\ContractsPage.xaml;Pages\LoginPage.xaml;Pages\RegisterPage.xaml;Pages\TestPage.xaml;Pages\ViewContractPage.xaml;Styles\Buttons.xaml;Styles\Windows.xaml;Styles\Texts.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;
 
 False
 

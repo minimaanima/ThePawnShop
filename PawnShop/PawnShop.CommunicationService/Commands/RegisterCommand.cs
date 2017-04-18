@@ -12,6 +12,7 @@ namespace PawnShop.CommunicationService.Commands
     {
         public RegisterCommand(string[] data) : base(data)
         {
+            GetParameters = 4;
         }
 
         public override ICommand Create(string[] data)
@@ -21,16 +22,17 @@ namespace PawnShop.CommunicationService.Commands
 
         public override string Execute()
         {
-            string username = Data[1];
-            string password = Data[2];
-            string confirmedPassword = Data[3];
+            string officeName = Data[1];
+            string username = Data[2];
+            string password = Data[3];
+            string confirmedPassword = Data[4];
 
-            RegisterUser(username, password, confirmedPassword);
+            RegisterUser(officeName,username, password, confirmedPassword);
 
             return string.Format($"User {username} registered successfully!");
         }
 
-        private void RegisterUser(string username, string password, string confirmedPassword)
+        private void RegisterUser(string officeName, string username, string password, string confirmedPassword)
         {
             using (var context = new PawnShopContext())
             {
@@ -49,8 +51,10 @@ namespace PawnShop.CommunicationService.Commands
                     throw new ArgumentException($"Login users cannot register. Logout first!");
                 }
 
+                var office = context.Offices.FirstOrDefault(o => o.Name == officeName);
                 var user = new User()
                 {
+                    Office = office,
                     Credentials = new Credentials()
                     {
                         Email = username,
@@ -60,6 +64,7 @@ namespace PawnShop.CommunicationService.Commands
 
                 context.Users.Add(user);
                 context.SaveChanges();
+                LoginUser.User = user;
             }
         }
     }

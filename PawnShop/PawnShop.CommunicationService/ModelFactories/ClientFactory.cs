@@ -17,10 +17,11 @@ namespace PawnShop.CommunicationService.ModelFactories
 
             using (var context = new PawnShopContext())
             {
+                context.Users.Attach(LoginUser.User);
                 var clients =
                     context.Clients
-                    //.Where(
-                    //        c => c.Contracts.Any(con => con.Employee.Office.Name == LoginUser.User.Office.Name))
+                    .Where(
+                            c => c.Contracts.Any(con => con.Employee.Office.Name == LoginUser.User.Office.Name))
                         .ProjectTo<ClientDto>()
                         .ToList();
 

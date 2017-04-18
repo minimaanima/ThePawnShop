@@ -31,6 +31,13 @@ namespace Startup.Pages
             this.Loaded += new RoutedEventHandler(OnLoaded);
         }
 
+        public ContractsPage(IEnumerable<ContractDto> contracts)
+        {
+            InitializeComponent();
+            ImportData(contracts);
+            this.Loaded += new RoutedEventHandler(OnLoaded);
+        }
+
         private void clients_btn(object sender, RoutedEventArgs e)
         {
             Switcher.Switch(new ClientsPage());
@@ -56,9 +63,17 @@ namespace Startup.Pages
             throw new NotImplementedException();
         }
 
-        public void ImportData()
+        public void ImportData(IEnumerable<ContractDto> contracts = null)
         {
-            myDataGrid.ItemsSource = ContractFactory.GetContracts();
+            if (contracts == null)
+            {
+                myDataGrid.ItemsSource = ContractFactory.GetContracts();
+            }
+            else
+            {
+                myDataGrid.ItemsSource = contracts;
+            }
+           
         }
 
         private void OnLoaded(object sender, EventArgs e)

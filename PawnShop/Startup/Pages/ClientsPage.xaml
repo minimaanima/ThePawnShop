@@ -8,7 +8,7 @@
       d:DesignHeight="800" d:DesignWidth="800"
       Title="ClientsPage">
 
-   
+
     <Border Background="{StaticResource ForegroundLightBrush}">
 
         <!-- Content -->
@@ -37,24 +37,23 @@
                     <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeChangeUserIcon}" Click="changeuser_btn"/>
                 </StackPanel>
             </Grid>
-            
+
             <!-- Search-->
             <Grid Grid.Row="1" Height="50" Background="{StaticResource WordDarkBlueBrush}">
 
                 <!-- Main buttons -->
                 <StackPanel  Grid.Column="1"  Orientation="Horizontal" HorizontalAlignment="Left">
-                    <TextBox Text="First Name" x:Name="firstName" Tag="First Name" Width="200" Height="30" FontSize="20" Margin="10 0 10 0" GotFocus="FirstName_GotFocus"  LostFocus="FirstName_LostFocus"  />
-                    <TextBox Text="Last Name" x:Name="lastName" Tag="Last Name" Width="200" Height="30" FontSize="20" Margin="0 0 10 0" GotFocus="Lastname_GotFocus" LostFocus="LastName_LostFocus" />
+                    <TextBox Text="Client Name" x:Name="clientName" Tag="Client Name" Width="200" Height="30" FontSize="20" Margin="10 0 10 0" GotFocus="ClientName_GotFocus"  LostFocus="ClientName_LostFocus"  />
                     <TextBox Text="Personal Id" x:Name="personalId" Tag="Personal ID" Width="200" Height="30" FontSize="20" Margin="0 0 10 0" GotFocus="PersonalId_GotFocus" LostFocus="PersonalId_LostFocus"/>
                     <TextBox Text="City" x:Name="city" Tag="City" Width="200" Height="30" FontSize="20" Margin="0 0 10 0" GotFocus="City_GotFocus" LostFocus="City_LostFocus"/>
-                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeSearchIcon}" />
+                    <Button  Style="{StaticResource IconButton}" Click="SearchButtonClick"/>
                 </StackPanel>
             </Grid>
             <DataGrid Grid.Row="2" x:Name="myDataGrid" Background="White" Margin="0,0,0,10" Grid.RowSpan="2" CanUserResizeColumns ="True" HorizontalAlignment="Stretch" 
             HorizontalContentAlignment="Stretch" ColumnWidth="*" FontSize="15">
-                
+
             </DataGrid>
         </Grid>
     </Border>
-  
+
 </Page>
