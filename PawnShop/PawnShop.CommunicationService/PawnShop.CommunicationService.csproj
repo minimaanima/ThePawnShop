@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\AddClientCommand.cs" />
     <Compile Include="Commands\AddContract.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\LoginCommand.cs" />

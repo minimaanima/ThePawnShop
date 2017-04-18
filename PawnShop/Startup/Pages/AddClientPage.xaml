@@ -66,26 +66,14 @@
                                 <!-- Id Card Number -->
                                 <Label Content="ID Card Number" FontSize="18" />
                                 <TextBox x:Name="idCardNumber" Tag="Username" Height="30" FontSize="20"/>
-                                
-                                <!-- Property -->
-                                <Label Content="Property" FontSize="18" />
-                                <TextBox x:Name="property" Tag="Username" Height="30" FontSize="20"/>
 
-                                <!-- Property Value -->
-                                <Label Content="Property Value" FontSize="18" />
-                                <TextBox x:Name="propertyValue" Tag="Username" Height="30" FontSize="20"/>
-
-                                <!-- Interest -->
-                                <Label Content="Interest" FontSize="18" />
-                                <TextBox x:Name="interest" Tag="Username" Height="30" FontSize="20"/>
-
-                                <!-- End Date-->
-                                <Label Content="End Date" FontSize="18" />
-                                <TextBox x:Name="endDate" Tag="Username" Height="30" FontSize="20"/>
+                                <!-- Town -->
+                                <Label Content="Town" FontSize="18" />
+                                <TextBox x:Name="townName" Tag="Town" Height="30" FontSize="20"/>
 
                                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" >
                                     <!-- Next button -->
-                                    <Button Content="Add" HorizontalAlignment="Center" FontSize="20" />
+                                    <Button Content="Add" HorizontalAlignment="Center" FontSize="20" Click="AddedButtonClick"/>
                                     <Label Content="|" Foreground="White"></Label>
                                     <!-- Next button -->
                                     <Button Content="Back" HorizontalAlignment="Center" FontSize="20" Click="home_btn"/>

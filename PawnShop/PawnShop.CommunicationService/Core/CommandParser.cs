@@ -44,6 +44,7 @@
             this.commands.Add("Register", new RegisterCommand(null));
             this.commands.Add("CashBoxTransaction", new CashBoxTransactionCommand(null));
             this.commands.Add("AddContract", new AddContract(null));
+            this.commands.Add("AddClient", new AddClientCommand(null));
         }
     }
 }

@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PawnShop.CommunicationService.Core;
+using PawnShop.CommunicationService.Interfaces;
 
 namespace Startup.Pages
 {
@@ -22,9 +24,12 @@ namespace Startup.Pages
     /// </summary>
     public partial class AddClientPage : Page,ISwitchable
     {
+        private ICommandParser commandParser;
+
         public AddClientPage()
         {
             InitializeComponent();
+            commandParser = new CommandParser();
         }
         private void home_btn(object sender, RoutedEventArgs e)
         {
@@ -33,6 +38,24 @@ namespace Startup.Pages
         public void UtilizeState(object state)
         {
             throw new NotImplementedException();
+        }
+
+        private void AddedButtonClick(object sender, RoutedEventArgs e)
+        {
+            var firstName = this.firstName.Text;
+            var middleName = this.middleName.Text;
+            var lastName = this.lastName.Text;
+            var address = this.adress.Text;
+            var personalId = this.personalId.Text;
+            var idCardNumber = this.idCardNumber.Text;
+            var phonenumber = this.phoneNumber.Text;
+            var townName = this.townName.Text;
+
+            var command = this.commandParser.ParseCommand(new[]
+                {"AddClient", firstName, middleName, lastName, address,personalId, idCardNumber, phonenumber, townName});
+            command.Execute();
+
+            Switcher.Switch(new ClientsPage());
         }
     }
 }
