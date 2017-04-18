@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Startup", "Startup\Startup.csproj", "{FBE4BB9D-3322-4F15-ACA4-5002D551B849}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PawnShop.Data", "PawnShop.Data\PawnShop.Data.csproj", "{00FD8E56-D9A9-446C-88E1-CDA8C4E4DC64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PawnShop.Models", "PawnShop.Models\PawnShop.Models.csproj", "{00A2860B-E50D-4EFD-B304-5667BD78BCC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PawnShop.CommunicationService", "PawnShop.CommunicationService\PawnShop.CommunicationService.csproj", "{A0540CFD-6890-4608-BBD1-F10E6879BA94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBE4BB9D-3322-4F15-ACA4-5002D551B849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBE4BB9D-3322-4F15-ACA4-5002D551B849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBE4BB9D-3322-4F15-ACA4-5002D551B849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBE4BB9D-3322-4F15-ACA4-5002D551B849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00FD8E56-D9A9-446C-88E1-CDA8C4E4DC64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00FD8E56-D9A9-446C-88E1-CDA8C4E4DC64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00FD8E56-D9A9-446C-88E1-CDA8C4E4DC64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00FD8E56-D9A9-446C-88E1-CDA8C4E4DC64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00A2860B-E50D-4EFD-B304-5667BD78BCC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00A2860B-E50D-4EFD-B304-5667BD78BCC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00A2860B-E50D-4EFD-B304-5667BD78BCC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00A2860B-E50D-4EFD-B304-5667BD78BCC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0540CFD-6890-4608-BBD1-F10E6879BA94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0540CFD-6890-4608-BBD1-F10E6879BA94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0540CFD-6890-4608-BBD1-F10E6879BA94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0540CFD-6890-4608-BBD1-F10E6879BA94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

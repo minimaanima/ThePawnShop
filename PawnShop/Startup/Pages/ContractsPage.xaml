@@ -1,0 +1,47 @@
+﻿<Page x:Class="Startup.Pages.ContractsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Startup.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="800"
+      Title="ContractsPage">
+
+    <Border Background="{StaticResource ForegroundLightBrush}">
+
+        <!-- Content -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Top Menu -->
+            <Grid Height="75" Background="{StaticResource WordBlueBrush}">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*" />
+                    <ColumnDefinition Width="7*" />
+                    <ColumnDefinition Width="5*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Main buttons -->
+                <StackPanel  Grid.Column="1"  Orientation="Horizontal">
+                    <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeClientsIcon}" Click="clients_btn"/>
+                    <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeContractsIcon}" Click="contracts_btn" />
+                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeCogIcon}" Click="cashbox_btn" />
+                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeAddClientIcon}" Click="addclient_btn"/>
+                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeChangeUserIcon}" Click="changeuser_btn" />
+                </StackPanel>
+            </Grid>
+
+            <DataGrid Grid.Row="1" x:Name="myDataGrid" Background="White" Margin="0,0,0,10" Grid.RowSpan="2" CanUserResizeColumns ="True" HorizontalAlignment="Stretch" 
+            HorizontalContentAlignment="Stretch" ColumnWidth="*" FontSize="15">
+
+            </DataGrid>
+
+        </Grid>
+
+    </Border>
+</Page>
