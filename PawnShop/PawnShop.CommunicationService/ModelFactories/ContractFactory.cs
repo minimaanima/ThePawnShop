@@ -83,7 +83,7 @@ namespace PawnShop.CommunicationService.ModelFactories
             {
                 MapperInitiliazer.InitiliazeContracts();
 
-                var contracts = context.Contracts.Where(c => /*c.Employee.Office.Name == LoginUser.User.Office.Name && */string.Concat(c.Client.FirstName, " ", c.Client.MiddleName, " ", c.Client.LastName) == name)
+                var contracts = context.Contracts.Where(c => c.Employee.Office.Name == LoginUser.User.Office.Name && string.Concat(c.Client.FirstName, " ", c.Client.MiddleName, " ", c.Client.LastName) == name)
                             .ProjectTo<ContractDto>()
                             .ToList();
 
@@ -116,24 +116,6 @@ namespace PawnShop.CommunicationService.ModelFactories
                             .ToList();
 
                 return contracts;
-            }
-        }
-
-        public static ContractDetailsDto GetContractDetails(ContractDto contractDto)
-        {
-            using (var context = new PawnShopContext())
-            {
-                var employee = context.Contracts.Find(contractDto.ContractId).Employee.Credentials.Email;
-
-                var contractDetails = new ContractDetailsDto()
-                {
-                    Date = contractDto.DateOfRegistrationAndExpiring,
-                    Operator = employee,
-                    ProperyValue = contractDto.PropertyValue.ToString(),
-                    ValueAfterInterest = (contractDto.PropertyValue * contractDto.Interest + contractDto.PropertyValue).ToString()
-                };
-
-                return contractDetails;
             }
         }
     }

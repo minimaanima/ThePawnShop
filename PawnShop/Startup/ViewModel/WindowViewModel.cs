@@ -39,12 +39,12 @@ namespace Startup
         /// <summary>
         /// The smallest width the window can go to
         /// </summary>
-        public double WindowMinimumWidth { get; set; } = 1083;
+        public double WindowMinimumWidth { get; set; } = 983;
 
         /// <summary>
         /// The smallest height the window can go to
         /// </summary>
-        public double WindowMinimumHeight { get; set; } = 684;
+        public double WindowMinimumHeight { get; set; } = 584;
 
         /// <summary>
         /// True if the window should be borderless because it is docked or maximized
@@ -122,7 +122,7 @@ namespace Startup
         /// <summary>
         /// the current page of the application
         /// </summary>
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
+        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.ClientsPage;
 
         #region Commands
 

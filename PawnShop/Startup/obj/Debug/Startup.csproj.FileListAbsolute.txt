@@ -218,5 +218,3 @@ D:\ThePawnShop\PawnShop\Startup\obj\Debug\Styles\Fonts.baml
 D:\ThePawnShop\PawnShop\Startup\obj\Debug\Startup.g.resources
 D:\ThePawnShop\PawnShop\Startup\obj\Debug\Startup.Properties.Resources.resources
 D:\ThePawnShop\PawnShop\Startup\obj\Debug\Startup.csproj.GenerateResource.Cache
-D:\ThePawnShop\PawnShop\Startup\obj\Debug\Pages\ContractDetailsPage.g.cs
-D:\ThePawnShop\PawnShop\Startup\obj\Debug\Pages\ContractDetailsPage.baml

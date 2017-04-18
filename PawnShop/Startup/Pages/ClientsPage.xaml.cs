@@ -74,5 +74,37 @@ namespace Startup.Pages
             this.myDataGrid.Columns.Add(new ButtonColumn());
             this.myDataGrid.Columns.Add(new ShowContractsButtonColumn());
         }
+        private void FirstName_GotFocus(object sender, RoutedEventArgs e)
+        {
+            firstName.Text = "";
+        }
+        private void Lastname_GotFocus(object sender, RoutedEventArgs e)
+        {
+            lastName.Text = "";
+        }
+        private void PersonalId_GotFocus(object sender, RoutedEventArgs e)
+        {
+            personalId.Text = "";
+        }
+        private void City_GotFocus(object sender, RoutedEventArgs e)
+        {
+            city.Text = "";
+        }
+        private void FirstName_LostFocus(object sender, RoutedEventArgs e)
+        {
+            firstName.Text = "First Name";
+        }
+        private void LastName_LostFocus(object sender, RoutedEventArgs e)
+        {
+            lastName.Text = "Last Name";
+        }
+        private void PersonalId_LostFocus(object sender, RoutedEventArgs e)
+        {
+            personalId.Text = "Personal Id";
+        }
+        private void City_LostFocus(object sender, RoutedEventArgs e)
+        {
+            city.Text = "City";
+        }
     }
 }

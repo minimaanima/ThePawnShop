@@ -97,9 +97,6 @@
     <Compile Include="Pages\ClientsPage.xaml.cs">
       <DependentUpon>ClientsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ContractDetailsPage.xaml.cs">
-      <DependentUpon>ContractDetailsPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\ContractsPage.xaml.cs">
       <DependentUpon>ContractsPage.xaml</DependentUpon>
     </Compile>
@@ -152,10 +149,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ClientsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\ContractDetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
