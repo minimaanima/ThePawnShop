@@ -71,8 +71,14 @@ namespace Startup.Pages
 
         private void OnLoaded(object sender, EventArgs e)
         {
-            this.myDataGrid.Columns.Add(new ButtonColumn());
-            this.myDataGrid.Columns.Add(new ShowContractsButtonColumn());
+            this.myDataGrid.Columns.Add(new ButtonColumn()
+            {
+                Header = "Add"
+            });
+            this.myDataGrid.Columns.Add(new ShowContractsButtonColumn()
+            {
+                Header="Contracts"
+            });
         }
         private void FirstName_GotFocus(object sender, RoutedEventArgs e)
         {

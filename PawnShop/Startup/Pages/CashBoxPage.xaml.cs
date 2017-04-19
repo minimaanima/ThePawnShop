@@ -46,6 +46,26 @@ namespace Startup.Pages
         {
             Switcher.Switch(new LoginPage());
         }
+        private void operations_btn(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new PerformedOperationsPage());
+        }
+        private void descriptionIn_Focus(object sender, RoutedEventArgs e)
+        {
+            descriptionIn.Text="";
+        }
+        private void descriptionIn_LostFocus(object sender, RoutedEventArgs e)
+        {
+            descriptionIn.Text="Leave some description";
+        }
+        private void descriptionOut_Focus(object sender, RoutedEventArgs e)
+        {
+            descriptionOut.Text = "";
+        }
+        private void descriptionOut_LostFocus(object sender, RoutedEventArgs e)
+        {
+            descriptionOut.Text = "Leave some description";
+        }
         public void UtilizeState(object state)
         {
             throw new NotImplementedException();

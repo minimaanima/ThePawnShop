@@ -19,10 +19,8 @@ namespace Startup
             if (button == null)
             {
                 button = new Button();
-                button.Height = 40;
-                button.Width = 170;
                 button.Content = "Details";
-                button.FontSize = 15;
+                button.SetResourceReference(Control.StyleProperty, "GridButton");
                 button.Click += Button_Click;
             }
 

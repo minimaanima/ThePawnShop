@@ -8,7 +8,7 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="RegisterPage">
 
-    <Border Background="{StaticResource WordBlueBrush}">
+    <Border Background="{StaticResource WordLightBlueBrush}">
         <Grid>
             <!-- Blue background image -->
             <Grid.Background>
@@ -54,10 +54,10 @@
 
                                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" >
                                     <!-- Next button -->
-                                    <Button Content="Add" HorizontalAlignment="Center" FontSize="20" />
+                                    <Button Content="Add" HorizontalAlignment="Center" Cursor="Hand"  FontSize="20" />
                                     <Label Content="|" Foreground="White"></Label>
                                     <!-- Next button -->
-                                    <Button Content="Back" HorizontalAlignment="Center" FontSize="20" Click="backTologin_btn"/>
+                                    <Button Content="Back" HorizontalAlignment="Center" FontSize="20" Cursor="Hand" Click="backTologin_btn"/>
                                 </StackPanel>
                             </StackPanel>
                         </Grid>

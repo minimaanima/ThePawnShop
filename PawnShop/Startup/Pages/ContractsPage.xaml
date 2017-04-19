@@ -12,31 +12,73 @@
 
         <!-- Content -->
         <Grid>
+            <!-- Blue background image -->
+            <Grid.Background>
+                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="..\Images\backgroundSignIn.png" Opacity="0.5"/>
+            </Grid.Background>
+            
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
             <!-- Top Menu -->
-            <Grid Height="75" Background="{StaticResource WordBlueBrush}">
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="7*" />
-                    <ColumnDefinition Width="7*" />
-                    <ColumnDefinition Width="5*" />
-                </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Height="75" Background="{StaticResource WordLightBlueBrush}">
 
                 <!-- Main buttons -->
-                <StackPanel  Grid.Column="1"  Orientation="Horizontal">
-                    <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeClientsIcon}" Click="clients_btn"/>
-                    <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeContractsIcon}" Click="contracts_btn" />
-                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeCogIcon}" Click="cashbox_btn" />
-                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeAddClientIcon}" Click="addclient_btn"/>
-                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeChangeUserIcon}" Click="changeuser_btn" />
+                <StackPanel  Grid.Column="1"  Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeClientsIcon}"  Cursor="Hand" Click="clients_btn" >
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <TextBlock FontWeight="Bold" FontSize="16" >Clients Page</TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeContractsIcon}" Cursor="Hand" Click="contracts_btn" >
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <TextBlock FontWeight="Bold" FontSize="16" >Contracts Page</TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeCogIcon}" Cursor="Hand" Click="cashbox_btn">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <TextBlock FontWeight="Bold" FontSize="16" >CashBox Page</TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeAddClientIcon}" Cursor="Hand" Click="addclient_btn">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <TextBlock FontWeight="Bold" FontSize="16" >Add Client Page</TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeChangeUserIcon}" Cursor="Hand" Click="changeuser_btn">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <TextBlock FontWeight="Bold" FontSize="16" >Change User Page</TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
                 </StackPanel>
             </Grid>
+            <!-- Search-->
+            <Grid Grid.Row="1" Height="50" Background="{StaticResource WordDarkBlueBrush}">
 
-            <DataGrid Grid.Row="1" x:Name="myDataGrid" Background="White" Margin="0,0,0,10" Grid.RowSpan="2" CanUserResizeColumns ="True" HorizontalAlignment="Stretch" 
+                <!-- Search Text Box -->
+                <StackPanel  Grid.Column="1"  Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBox Text="First Name" Width="200" Height="30" FontSize="20" Margin="10 0 10 0"/>
+                    <TextBox Text="Last Name" Width="200" Height="30" FontSize="20" Margin="0 0 10 0" />
+                    <TextBox Text="Personal Id" Width="200" Height="30" FontSize="20" Margin="0 0 10 0" />
+                    <TextBox Text="City" Width="200" Height="30" FontSize="20" Margin="0 0 10 0" />
+                    <Button  Style="{StaticResource IconSearchButton}" Content="{StaticResource FontAwesomeSearchIcon}" />
+                </StackPanel>
+            </Grid>
+            <!--Data Grid -->
+            <DataGrid Grid.Row="2" x:Name="myDataGrid" Background="White" Margin="0,0,0,10" Grid.RowSpan="2" CanUserResizeColumns ="True" HorizontalAlignment="Stretch" 
             HorizontalContentAlignment="Stretch" ColumnWidth="*" FontSize="15">
 
             </DataGrid>
