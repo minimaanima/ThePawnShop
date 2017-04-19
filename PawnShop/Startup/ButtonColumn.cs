@@ -23,10 +23,8 @@ namespace Startup
             if (button == null)
             {
                 button = new Button();
-                button.Height = 40;
-                button.Width = 150;
                 button.Content = "Add";
-                button.FontSize = 13;
+                button.SetResourceReference(Control.StyleProperty, "GridButton");
                 button.Click += Button_Click;
             }
 

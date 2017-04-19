@@ -61,14 +61,12 @@ namespace Startup.Pages
             try
             {
                 command.Execute();
+                Switcher.Switch(new ClientsPage());
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                MessageBox.Show("Invalid data provided.");
             }
-            
-
-            Switcher.Switch(new ClientsPage());
         }
     }
 }

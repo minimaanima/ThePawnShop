@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Startup.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="800" d:DesignWidth="800"
       Title="PerformedOperationsPage">
 
     <Border Background="{StaticResource ForegroundLightBrush}">
@@ -17,6 +17,7 @@
                 <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="..\Images\backgroundSignIn.png" Opacity="0.5"/>
             </Grid.Background>
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
@@ -73,9 +74,21 @@
                 </StackPanel>
             </Grid>
 
+            <!-- Search Date Box -->
+
+            <Grid Grid.Row="2" Height="50" Background="{StaticResource WordDarkBlueBrush}">
+                <Border BorderBrush="White" BorderThickness="0 1 0 0">
+                    <StackPanel  Orientation="Horizontal" HorizontalAlignment="Left">
+                        <TextBox Text="From Date" x:Name="fromDate" Tag="From Date" Width="200" Height="30" FontSize="20" Margin="0 0 10 0" GotFocus="FromDate_Focus" LostFocus="FromDate_LostFocus" />
+                        <TextBox Text="To Date" x:Name="toDate" Tag="To Date" Width="200" Height="30" FontSize="20" Margin="0 0 10 0" GotFocus="ToDate_Focus" LostFocus="ToDate_LostFocus"/>
+                        <Button  Style="{StaticResource IconSearchButton}" Content="{StaticResource FontAwesomeSearchIcon}"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
             <!-- The user content -->
-            <ContentPresenter Grid.Row="1" />
-            <Grid Grid.Row="2">
+            <ContentPresenter Grid.Row="3" />
+            <Grid Grid.Row="3">
                 <Label>Performed Opperations Page</Label>
             </Grid>
 

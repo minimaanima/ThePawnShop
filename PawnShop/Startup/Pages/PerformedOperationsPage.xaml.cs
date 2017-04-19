@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Startup.Interfaces;
+using Startup.SwitchingService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +14,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Startup.Interfaces;
-using Startup.SwitchingService;
 
 namespace Startup.Pages
 {
@@ -22,6 +22,10 @@ namespace Startup.Pages
     /// </summary>
     public partial class PerformedOperationsPage : Page, ISwitchable
     {
+        public PerformedOperationsPage()
+        {
+            InitializeComponent();
+        }
         private void clients_btn(object sender, RoutedEventArgs e)
         {
             Switcher.Switch(new ClientsPage());
@@ -45,6 +49,34 @@ namespace Startup.Pages
         private void back_cashbox_btn(object sender, RoutedEventArgs e)
         {
             Switcher.Switch(new CashBoxPage());
+        }
+        private void FromDate_Focus(object sender, RoutedEventArgs e)
+        {
+            if (fromDate.Text == "From Date")
+            {
+                fromDate.Text = "";
+            }
+        }
+        private void FromDate_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (fromDate.Text == "")
+            {
+                fromDate.Text = "From Date";
+            }
+        }
+        private void ToDate_Focus(object sender, RoutedEventArgs e)
+        {
+            if (toDate.Text == "To Date")
+            {
+                toDate.Text = "";
+            }
+        }
+        private void ToDate_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (toDate.Text == "")
+            {
+                toDate.Text = "To Date";
+            }
         }
         public void UtilizeState(object state)
         {

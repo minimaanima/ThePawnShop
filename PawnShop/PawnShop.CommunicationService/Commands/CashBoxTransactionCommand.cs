@@ -48,7 +48,8 @@ namespace PawnShop.CommunicationService.Commands
                     CashBox = LoginUser.User.Office.CashBox,
                     Details = details,
                     OperationType = operationType,
-                    Value = value
+                    Value = value,
+                    DateTime = DateTime.Now
                 };
 
                 context.CashOperations.Add(cashOperation);

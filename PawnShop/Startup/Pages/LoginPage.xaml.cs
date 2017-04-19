@@ -45,13 +45,12 @@ namespace Startup.Pages
             try
             {
                 command.Execute();
+                Switcher.Switch(new ClientsPage());
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
-            }
-
-            Switcher.Switch(new ClientsPage());
+            }        
         }
         private void register_btn(object sender, RoutedEventArgs e)
         {

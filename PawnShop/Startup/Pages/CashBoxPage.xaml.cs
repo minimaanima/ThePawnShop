@@ -14,6 +14,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PawnShop.CommunicationService.Core;
+using PawnShop.CommunicationService.Interfaces;
+using PawnShop.CommunicationService.Utilities;
+using PawnShop.Data;
+using PawnShop.Models.Enums;
 
 namespace Startup.Pages
 {
@@ -22,9 +27,13 @@ namespace Startup.Pages
     /// </summary>
     public partial class CashBoxPage : Page,ISwitchable
     {
+        private ICommandParser parser;
+
         public CashBoxPage()
         {
             InitializeComponent();
+            ImportMoney();
+            this.parser = new CommandParser();
         }
         private void clients_btn(object sender, RoutedEventArgs e)
         {
@@ -56,7 +65,11 @@ namespace Startup.Pages
         }
         private void descriptionIn_LostFocus(object sender, RoutedEventArgs e)
         {
-            descriptionIn.Text = "Leave some description";
+            if (descriptionIn.Text == "")
+            {
+                descriptionIn.Text = "Leave some description";
+            }
+           
         }
         private void descriptionOut_Focus(object sender, RoutedEventArgs e)
         {
@@ -64,11 +77,83 @@ namespace Startup.Pages
         }
         private void descriptionOut_LostFocus(object sender, RoutedEventArgs e)
         {
-            descriptionOut.Text = "Leave some description";
+            if (descriptionOut.Text == "")
+            {
+                descriptionOut.Text = "Leave some description";
+            }  
         }
         public void UtilizeState(object state)
         {
             throw new NotImplementedException();
+        }
+
+        private void ImportMoney()
+        {
+            using (var context = new PawnShopContext())
+            {
+                context.Users.Attach(LoginUser.User);
+                var cashBox = LoginUser.User.Office.CashBox;
+
+                allCashAvailability.Text = cashBox.Balance.ToString();
+            }
+        }
+
+        private void CashOutButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var description = descriptionOut.Text;
+            var moneyAmount = amount.Text;
+            ComboBoxItem typeItem = (ComboBoxItem)ComboBox.SelectedItem;
+            string operation = typeItem.Content.ToString();
+
+            var command = this.parser.ParseCommand(new[]
+            {
+                "CashBoxTransaction",
+                operation,
+                moneyAmount,
+                description
+            });
+
+            try
+            {
+                command.Execute();
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Invalid data provided.");
+            }
+
+            ImportMoney();
+            descriptionOut.Text = "Leave some description";
+            amount.Text = "";
+        }
+
+        private void CashInButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var description = descriptionIn.Text;
+            var moneyAmount = amountIn.Text;
+            string operation = OperationType.Deposit.ToString();
+
+            var command = this.parser.ParseCommand(new[]
+            {
+                "CashBoxTransaction",
+                operation,
+                moneyAmount,
+                description
+            });
+
+
+            try
+            {
+                command.Execute();
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Invalid data provided.");
+            }
+           
+            ImportMoney();
+            descriptionIn.Text = "Leave some description";
+            amountIn.Text = "";
         }
     }
 }

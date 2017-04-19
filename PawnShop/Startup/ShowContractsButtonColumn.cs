@@ -21,10 +21,8 @@ namespace Startup
             if (button == null)
             {
                 button = new Button();
-                button.Height = 40;
-                button.Width = 150;
+                button.SetResourceReference(Control.StyleProperty, "GridButton");
                 button.Content = "Contacts";
-                button.FontSize = 13;
                 button.Click += Button_Click;
             }
 

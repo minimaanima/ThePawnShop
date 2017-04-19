@@ -1,4 +1,6 @@
-﻿namespace PawnShop.Models.BusinessModels
+﻿using System;
+
+namespace PawnShop.Models.BusinessModels
 {
     using System.ComponentModel.DataAnnotations;
     using Enums;
@@ -17,5 +19,7 @@
         public int CashBoxId { get; set; }
 
         public virtual CashBox CashBox { get; set; }
+
+        public DateTime DateTime { get; set; }
     }
 }

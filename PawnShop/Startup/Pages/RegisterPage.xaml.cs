@@ -52,13 +52,12 @@ namespace Startup.Pages
             try
             {
                 command.Execute();
+                Switcher.Switch(new ClientsPage());
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
-
-            Switcher.Switch(new ClientsPage());
         }
     }
 }

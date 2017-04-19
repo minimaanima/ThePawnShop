@@ -74,13 +74,12 @@ namespace Startup.Pages
             try
             {
                 command.Execute();
+                Switcher.Switch(new ContractsPage());
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
-            }
-
-            Switcher.Switch(new ContractsPage());
+                MessageBox.Show("Invalid data provided.");
+            }    
         }
 
     }
