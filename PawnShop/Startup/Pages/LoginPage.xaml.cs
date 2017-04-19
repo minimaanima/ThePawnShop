@@ -33,16 +33,24 @@ namespace Startup.Pages
         {
             var username = this.username.Text;
             var password = this.password.Password;
-            var command = "Login";
-            CommandDispatcher dispatcher = new CommandDispatcher();
-            dispatcher.DispatchCommand(new string[]
+            var commandString = "Login";
+            CommandParser parser = new CommandParser();
+            var command = parser.ParseCommand(new string[]
             {
-                command,
+                commandString,
                 username,
                 password
             });
-            var user = LoginUser.User.Credentials.Email;
-            
+
+            try
+            {
+                command.Execute();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+
             Switcher.Switch(new ClientsPage());
         }
         private void register_btn(object sender, RoutedEventArgs e)

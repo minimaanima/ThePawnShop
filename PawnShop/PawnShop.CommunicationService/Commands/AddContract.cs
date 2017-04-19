@@ -34,7 +34,7 @@ namespace PawnShop.CommunicationService.Commands
             return string.Format($"New contract successfully added.");
         }
 
-        private void AddNewContract(string property, decimal properyValue, decimal interest, DateTime endDate,
+        public static void AddNewContract(string property, decimal properyValue, decimal interest, DateTime endDate,
             string clientName)
         {
             using (var context = new PawnShopContext())
@@ -43,7 +43,8 @@ namespace PawnShop.CommunicationService.Commands
                   context.Clients.FirstOrDefault(
                       c => string.Concat(c.FirstName, " ", c.MiddleName, " ", c.LastName) == clientName);
 
-                var user = context.Users.FirstOrDefault();
+                context.Users.Attach(LoginUser.User);
+                var user = LoginUser.User;
 
                 var contract = new Contract()
                 {

@@ -23,10 +23,10 @@ namespace Startup
             if (button == null)
             {
                 button = new Button();
-                button.Height = 60;
-                button.Width = 170;
+                button.Height = 40;
+                button.Width = 150;
                 button.Content = "Add";
-                button.FontSize = 15;
+                button.FontSize = 13;
                 button.Click += Button_Click;
             }
 

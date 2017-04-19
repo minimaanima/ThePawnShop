@@ -43,11 +43,6 @@ namespace PawnShop.CommunicationService.Commands
                     throw new ArgumentException("Invalid username or password");
                 }
 
-                if (LoginUser.User != null)
-                {
-                    throw new ArgumentException("You should log out first");
-                }
-
                 var userId = context.Credentials.FirstOrDefault(c => c.Email == username).Id;
                 var user = context.Users.Find(userId);
                 LoginUser.User = user;

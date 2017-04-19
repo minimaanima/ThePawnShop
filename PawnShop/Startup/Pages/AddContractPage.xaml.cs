@@ -71,7 +71,14 @@ namespace Startup.Pages
             var command =
                 this.commandParser.ParseCommand(new[]
                     {"AddContract", endDate, property, propertyValue, interest, fullName});
-            command.Execute();
+            try
+            {
+                command.Execute();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
 
             Switcher.Switch(new ContractsPage());
         }

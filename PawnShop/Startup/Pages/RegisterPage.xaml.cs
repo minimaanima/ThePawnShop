@@ -48,7 +48,15 @@ namespace Startup.Pages
             var confirmedPassword = this.confirmedPassword.Password;
 
             var command = commandParser.ParseCommand(new[] {"Register",officeName, email, password, confirmedPassword});
-            command.Execute();
+
+            try
+            {
+                command.Execute();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
 
             Switcher.Switch(new ClientsPage());
         }

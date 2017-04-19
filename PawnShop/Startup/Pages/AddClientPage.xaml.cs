@@ -50,10 +50,23 @@ namespace Startup.Pages
             var idCardNumber = this.idCardNumber.Text;
             var phonenumber = this.phoneNumber.Text;
             var townName = this.townName.Text;
+            var property = this.property.Text;
+            var propertyValue = this.propertyValue.Text;
+            var interest = this.propertyValue.Text;
+            var endDate = this.endDate.Text;
 
             var command = this.commandParser.ParseCommand(new[]
-                {"AddClient", firstName, middleName, lastName, address,personalId, idCardNumber, phonenumber, townName});
-            command.Execute();
+                {"AddClient", firstName, middleName, lastName, address,personalId, idCardNumber, phonenumber, townName, property, propertyValue, interest, endDate});
+
+            try
+            {
+                command.Execute();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            
 
             Switcher.Switch(new ClientsPage());
         }
