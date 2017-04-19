@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PawnShop.CommunicationService.ModelFactories;
 using PawnShop.Data.DTOs;
+using Startup.ButtonColumns;
 using Startup.SwitchingService;
 
 namespace Startup.Pages
@@ -27,6 +28,7 @@ namespace Startup.Pages
         {
             InitializeComponent();
             myDataGrid.ItemsSource = contractDetailsDtos;
+            this.Loaded += new RoutedEventHandler(OnLoaded);
 
         }
 
@@ -58,6 +60,15 @@ namespace Startup.Pages
         public void UtilizeState(object state)
         {
             throw new NotImplementedException();
+        }
+
+        private void OnLoaded(object sender, EventArgs e)
+        {
+            this.myDataGrid.Columns.Add(new ContractDetailsButtonColum()
+            {
+                Header = "Change Status"
+            });
+
         }
     }
 }

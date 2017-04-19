@@ -78,8 +78,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ButtonColumn.cs" />
-    <Compile Include="ContractsButtonColumn.cs" />
+    <Compile Include="ButtonColumns\ButtonColumn.cs" />
+    <Compile Include="ButtonColumns\ContractDetailsButtonColum.cs" />
+    <Compile Include="ButtonColumns\ContractsButtonColumn.cs" />
     <Compile Include="DataModels\ApplicationPage.cs" />
     <Compile Include="Interfaces\ISwitchable.cs" />
     <Compile Include="Pages\AddClientPage.xaml.cs">
@@ -118,7 +119,7 @@
     <Compile Include="Pages\ViewContractPage.xaml.cs">
       <DependentUpon>ViewContractPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ShowContractsButtonColumn.cs" />
+    <Compile Include="ButtonColumns\ShowContractsButtonColumn.cs" />
     <Compile Include="SwitchingService\Switcher.cs" />
     <Compile Include="ValueConverters\ApplicationPageValueConverter.cs" />
     <Compile Include="ValueConverters\BaseValueConverter.cs" />

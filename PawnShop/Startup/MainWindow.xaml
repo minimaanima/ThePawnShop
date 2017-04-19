@@ -89,7 +89,7 @@
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality"
                                                        Source="..\Images\maximizeArrow.png" />
                                             </Button>
-                                            <Button Style="{StaticResource MyCustomClose}" Command="{Binding CloseCommand}">
+                                            <Button Style="{StaticResource MyCustomClose}" Command="{Binding CloseCommand}" Click="ExitCommand">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality"
                                                        Source="..\Images\error.png" />
                                             </Button>

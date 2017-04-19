@@ -69,17 +69,18 @@
             <Grid Grid.Row="1" Height="50" Background="{StaticResource WordDarkBlueBrush}">
 
                 <!-- Search Text Box -->
-                <StackPanel  Grid.Column="1"  Orientation="Horizontal" HorizontalAlignment="Left">
-                    <TextBox Text="First Name" Width="200" Height="30" FontSize="20" Margin="10 0 10 0"/>
-                    <TextBox Text="Last Name" Width="200" Height="30" FontSize="20" Margin="0 0 10 0" />
-                    <TextBox Text="Personal Id" Width="200" Height="30" FontSize="20" Margin="0 0 10 0" />
-                    <TextBox Text="City" Width="200" Height="30" FontSize="20" Margin="0 0 10 0" />
-                    <Button  Style="{StaticResource IconSearchButton}" Content="{StaticResource FontAwesomeSearchIcon}" />
+                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button  Style="{StaticResource rectangleNavigationWhiteButton}" Content="Saled" Width="80" Click="Saled_btn"  />
+                    <Button  Style="{StaticResource rectangleNavigationWhiteButton}" Content="Active" Width="80" Click="Active_btn"/>
+                    <Button  Style="{StaticResource rectangleNavigationWhiteButton}" Content="Ended" Width="80" Click="Ended_btn"/>
+                    <Button  Style="{StaticResource rectangleNavigationWhiteButton}" Content="Overtimed" Width="80" Click="Overtimed_btn"/>
+                    <Button  Style="{StaticResource rectangleNavigationWhiteButton}" Content="New" Width="80" Click="New_btn"/>
                 </StackPanel>
             </Grid>
+
             <!--Data Grid -->
             <DataGrid Grid.Row="2" x:Name="myDataGrid" Background="White" Margin="0,0,0,10" Grid.RowSpan="2" CanUserResizeColumns ="True" HorizontalAlignment="Stretch" 
-            HorizontalContentAlignment="Stretch" ColumnWidth="*" FontSize="15">
+            HorizontalContentAlignment="Stretch" ColumnWidth="*" SelectionMode="Single" FontSize="15" CanUserAddRows="False">
 
             </DataGrid>
 

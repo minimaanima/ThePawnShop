@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PawnShop.Data;
+using PawnShop.Models.Enums;
 using Startup.Interfaces;
 using Startup.SwitchingService;
 using UserControl = System.Windows.Controls.UserControl;
@@ -52,6 +53,20 @@ namespace Startup
             else
                 throw new ArgumentException("NextPage is not ISwitchable! "
                   + nextPage.Name.ToString());
+        }
+
+        private void ExitCommand(object sender, RoutedEventArgs e)
+        {
+            using (var context = new PawnShopContext())
+            {
+                var contractToDelete = context.Contracts.Where(c => c.Status == Status.Saled).ToList();
+                foreach (var contract in contractToDelete)
+                {
+                    context.Contracts.Remove(contract);
+                }
+
+                context.SaveChanges();
+            }
         }
     }
 }

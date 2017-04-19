@@ -57,6 +57,7 @@
     <Compile Include="DTOs\ClientDto.cs" />
     <Compile Include="DTOs\ContractDetailsDto.cs" />
     <Compile Include="DTOs\ContractDto.cs" />
+    <Compile Include="DTOs\StatisticDto.cs" />
     <Compile Include="Initializers\PawnShopIni.cs" />
     <Compile Include="PawnShopContext.cs" />
     <Compile Include="Program.cs" />

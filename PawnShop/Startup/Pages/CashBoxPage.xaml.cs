@@ -101,6 +101,11 @@ namespace Startup.Pages
         private void CashOutButtonClicked(object sender, RoutedEventArgs e)
         {
             var description = descriptionOut.Text;
+            if (description == "Leave some description")
+            {
+                description = "No description";
+            }
+
             var moneyAmount = amount.Text;
             ComboBoxItem typeItem = (ComboBoxItem)ComboBox.SelectedItem;
             string operation = typeItem.Content.ToString();
@@ -119,7 +124,7 @@ namespace Startup.Pages
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Invalid data provided.");
+                MessageBox.Show(exp.Message);
             }
 
             ImportMoney();
@@ -130,6 +135,11 @@ namespace Startup.Pages
         private void CashInButtonClicked(object sender, RoutedEventArgs e)
         {
             var description = descriptionIn.Text;
+            if (description == "Leave some description")
+            {
+                description = "No description";
+            }
+
             var moneyAmount = amountIn.Text;
             string operation = OperationType.Deposit.ToString();
 

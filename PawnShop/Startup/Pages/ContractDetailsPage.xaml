@@ -20,25 +20,51 @@
             </Grid.RowDefinitions>
 
             <!-- Top Menu -->
-            <Grid Grid.Row="0" Height="75" Background="{StaticResource WordBlueBrush}">
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="7*" />
-                    <ColumnDefinition Width="7*" />
-                    <ColumnDefinition Width="5*" />
-                </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Height="75" Background="{StaticResource WordLightBlueBrush}">
 
                 <!-- Main buttons -->
-                <StackPanel  Grid.Column="1"  Orientation="Horizontal">
-                    <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeClientsIcon}" Click="clients_btn" />
-                    <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeContractsIcon}" Click="contracts_btn" />
-                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeCogIcon}" Click="cashbox_btn"/>
-                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeAddClientIcon}" Click="addclient_btn"/>
-                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeChangeUserIcon}" Click="changeuser_btn"/>
+                <StackPanel  Grid.Column="1"  Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeClientsIcon}"  Cursor="Hand" Click="clients_btn" >
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <TextBlock FontWeight="Bold" FontSize="16" >Clients Page</TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeContractsIcon}" Cursor="Hand" Click="contracts_btn" >
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <TextBlock FontWeight="Bold" FontSize="16" >Contracts Page</TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeCogIcon}" Cursor="Hand" Click="cashbox_btn">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <TextBlock FontWeight="Bold" FontSize="16" >CashBox Page</TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeAddClientIcon}" Cursor="Hand" Click="addclient_btn">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <TextBlock FontWeight="Bold" FontSize="16" >Add Client Page</TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeChangeUserIcon}" Cursor="Hand" Click="changeuser_btn">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <TextBlock FontWeight="Bold" FontSize="16" >Change User Page</TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
                 </StackPanel>
+
             </Grid>
+            
             <DataGrid Grid.Row="1" x:Name="myDataGrid" Background="White" Margin="0,0,0,10" Grid.RowSpan="2" CanUserResizeColumns ="True" HorizontalAlignment="Stretch" 
-            HorizontalContentAlignment="Stretch" ColumnWidth="*" FontSize="15">
+            HorizontalContentAlignment="Stretch" ColumnWidth="*" FontSize="15" CanUserAddRows="False">
 
             </DataGrid>
         </Grid>

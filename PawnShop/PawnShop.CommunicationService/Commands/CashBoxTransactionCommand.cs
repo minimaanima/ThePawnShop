@@ -30,9 +30,24 @@ namespace PawnShop.CommunicationService.Commands
 
         private void CashBoxTransaction(OperationType operationType, decimal value, string details)
         {
+            if (value <= 0)
+            {
+                throw new ArgumentException("Invalid value");
+            }
+
             using (var context = new PawnShopContext())
             {
                 context.Users.Attach(LoginUser.User);
+
+                var cashOperation = new CashOperation()
+                {
+                    CashBox = LoginUser.User.Office.CashBox,
+                    Details = details,
+                    OperationType = operationType,
+                    Value = value,
+                    DateTime = DateTime.Now,
+                    CashBoxValueBefore = LoginUser.User.Office.CashBox.Balance
+                };
 
                 if (operationType == OperationType.Deposit)
                 {
@@ -43,14 +58,7 @@ namespace PawnShop.CommunicationService.Commands
                     LoginUser.User.Office.CashBox.Balance -= value;
                 }
 
-                var cashOperation = new CashOperation()
-                {
-                    CashBox = LoginUser.User.Office.CashBox,
-                    Details = details,
-                    OperationType = operationType,
-                    Value = value,
-                    DateTime = DateTime.Now
-                };
+                cashOperation.CashBoxValueAfter = LoginUser.User.Office.CashBox.Balance;
 
                 context.CashOperations.Add(cashOperation);
                 context.SaveChanges();

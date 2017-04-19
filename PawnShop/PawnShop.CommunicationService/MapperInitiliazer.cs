@@ -27,5 +27,14 @@ namespace PawnShop.CommunicationService
                );
 
         }
+
+        public static void InitializeStatistics()
+        {
+            Mapper.Initialize(cfg => cfg.CreateMap<CashOperation, StatisticDto>()
+           .ForMember(op => op.OperationType, opt => opt.MapFrom(c => c.OperationType.ToString()))
+           .ForMember(op => op.DateTime, opt => opt.MapFrom(c => c.DateTime.ToString()))
+               );
+
+        }
     }
 }

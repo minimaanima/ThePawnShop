@@ -2,7 +2,9 @@
 {
     public class ContractDetailsDto
     {
-        public string Operator { get; set; }
+        public int Id { get; set; }
+
+        public string Property { get; set; }
 
         public string ProperyValue { get; set; }
 

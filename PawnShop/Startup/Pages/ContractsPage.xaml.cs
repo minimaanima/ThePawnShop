@@ -16,6 +16,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PawnShop.CommunicationService.ModelFactories;
 using PawnShop.Data.DTOs;
+using PawnShop.Models.Enums;
+using Startup.ButtonColumns;
 
 namespace Startup.Pages
 {
@@ -82,6 +84,27 @@ namespace Startup.Pages
             {
                 Header = "Details"
             });
+        }
+
+        public void Active_btn(object sender, RoutedEventArgs e)
+        {
+            myDataGrid.ItemsSource = ContractFactory.GetContracts(Status.Active);
+        }
+        public void Saled_btn(object sender, RoutedEventArgs e)
+        {
+            myDataGrid.ItemsSource = ContractFactory.GetContracts(Status.Saled);
+        }
+        public void Ended_btn(object sender, RoutedEventArgs e)
+        {
+            myDataGrid.ItemsSource = ContractFactory.GetContracts(Status.Ended);
+        }
+        public void Overtimed_btn(object sender, RoutedEventArgs e)
+        {
+            myDataGrid.ItemsSource = ContractFactory.GetContracts(Status.Overtimed);
+        }
+        public void New_btn(object sender, RoutedEventArgs e)
+        {
+            myDataGrid.ItemsSource = ContractFactory.GetContracts(Status.New);
         }
 
     }

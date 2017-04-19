@@ -133,8 +133,9 @@ namespace PawnShop.CommunicationService.ModelFactories
 
                 var contractDetails = new ContractDetailsDto()
                 {
+                    Id = contractDto.ContractId,
                     Date = contractDto.DateOfRegistrationAndExpiring,
-                    Operator = employee,
+                    Property = contractDto.PledgedProperty,
                     ProperyValue = contractDto.PropertyValue.ToString(),
                     ValueAfterInterest = (contractDto.PropertyValue * contractDto.Interest + contractDto.PropertyValue).ToString()
                 };

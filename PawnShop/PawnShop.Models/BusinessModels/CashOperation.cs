@@ -21,5 +21,9 @@ namespace PawnShop.Models.BusinessModels
         public virtual CashBox CashBox { get; set; }
 
         public DateTime DateTime { get; set; }
+
+        public decimal? CashBoxValueBefore { get; set; }
+
+        public decimal? CashBoxValueAfter { get; set; }
     }
 }

@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PawnShop.CommunicationService.ModelFactories;
 
 namespace Startup.Pages
 {
@@ -81,6 +82,24 @@ namespace Startup.Pages
         public void UtilizeState(object state)
         {
             throw new NotImplementedException();
+        }
+
+        private void ImportOperations(object sender, RoutedEventArgs e)
+        {
+            var fromDate = this.fromDate.Text;
+            var toDate = this.toDate.Text;
+
+            var operations = StatisticFactory.GetOperations(fromDate, toDate);
+            myDataGrid.ItemsSource = operations;
+
+            var filtredOperations = StatisticFactory.GetFirstAndLastOperation(fromDate, toDate);
+            if (filtredOperations.Any())
+            {
+                var firstOperation = filtredOperations.First();
+                var lastOperation = filtredOperations.Last();
+                this.amount.Text = firstOperation.CashBoxValueBefore.ToString();
+                this.amountAfter.Text = lastOperation.CashBoxValueAfter.ToString();
+            }
         }
     }
 }
