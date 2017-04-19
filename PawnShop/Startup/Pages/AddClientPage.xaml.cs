@@ -49,7 +49,7 @@ namespace Startup.Pages
             var personalId = this.personalId.Text;
             var idCardNumber = this.idCardNumber.Text;
             var phonenumber = this.phoneNumber.Text;
-            var townName = this.townName.Text;
+            var townName = this.town.Text;
             var property = this.property.Text;
             var propertyValue = this.propertyValue.Text;
             var interest = this.propertyValue.Text;

@@ -8,7 +8,7 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="AddClientPage">
 
-    <Border Background="{StaticResource WordBlueBrush}">
+    <Border Background="{StaticResource WordLightBlueBrush}">
         <Grid>
             <!-- Blue background image -->
             <Grid.Background>
@@ -37,7 +37,7 @@
                                    Foreground="{StaticResource WordBlueBrush}" 
                                        Margin="0 0 0 10"/>
                                 <StackPanel>
-                                    
+
                                 </StackPanel>
                                 <!-- First Name -->
                                 <Label Content="First Name" FontSize="18" />
@@ -69,33 +69,31 @@
 
                                 <!-- Town -->
                                 <Label Content="Town" FontSize="18" />
-                                <TextBox x:Name="townName" Tag="Town" Height="30" FontSize="20"/>
+                                <TextBox x:Name="town" Tag="Town" Height="30" FontSize="20"/>
 
                                 <!-- Property -->
                                 <Label Content="Property" FontSize="18" />
-                                <TextBox x:Name="property" Tag="Property" Height="30" FontSize="20"/>
+                                <TextBox x:Name="property" Tag="Username" Height="30" FontSize="20"/>
 
-                                <!-- PropertyValue -->
-                                <Label Content="PropertyValue" FontSize="18" />
-                                <TextBox x:Name="propertyValue" Tag="PropertyValue" Height="30" FontSize="20"/>
+                                <!-- Property Value -->
+                                <Label Content="Property Value" FontSize="18" />
+                                <TextBox x:Name="propertyValue" Tag="Username" Height="30" FontSize="20"/>
 
                                 <!-- Interest -->
                                 <Label Content="Interest" FontSize="18" />
-                                <TextBox x:Name="interest" Tag="Interest" Height="30" FontSize="20"/>
+                                <TextBox x:Name="interest" Tag="Username" Height="30" FontSize="20"/>
 
-                                <!-- EndDate -->
-                                <Label Content="EndDate" FontSize="18" />
-                                <TextBox x:Name="endDate" Tag="EndDate" Height="30" FontSize="20"/>
+                                <!-- End Date-->
+                                <Label Content="End Date" FontSize="18" />
+                                <TextBox x:Name="endDate" Tag="Username" Height="30" FontSize="20"/>
 
                                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" >
                                     <!-- Next button -->
-                                    <Button Content="Add" HorizontalAlignment="Center" FontSize="20" Click="AddedButtonClick"/>
+                                    <Button Content="Add" HorizontalAlignment="Center" Cursor="Hand" FontSize="20" Click="AddedButtonClick"/>
                                     <Label Content="|" Foreground="White"></Label>
                                     <!-- Next button -->
-                                    <Button Content="Back" HorizontalAlignment="Center" FontSize="20" Click="home_btn"/>
+                                    <Button Content="Back" HorizontalAlignment="Center" FontSize="20" Cursor="Hand" Click="home_btn"/>
                                 </StackPanel>
-                                
-
                             </StackPanel>
                         </Grid>
                     </Border>

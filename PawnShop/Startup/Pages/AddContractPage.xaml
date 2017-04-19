@@ -7,7 +7,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
       Title="AddContractPage">
-    <Border Background="{StaticResource WordBlueBrush}">
+
+    <Border Background="{StaticResource WordLightBlueBrush}">
         <Grid>
             <!-- Blue background image -->
             <Grid.Background>
@@ -76,10 +77,10 @@
 
                                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" >
                                     <!-- Next button -->
-                                    <Button Content="Add" HorizontalAlignment="Center" FontSize="20" Click="AddClicked"/>
+                                    <Button Content="Add" HorizontalAlignment="Center" FontSize="20" Cursor="Hand" Click="AddClicked"/>
                                     <Label Content="|" Foreground="White"></Label>
                                     <!-- Next button -->
-                                    <Button Content="Back" HorizontalAlignment="Center" FontSize="20" Click="home_btn"/>
+                                    <Button Content="Back" HorizontalAlignment="Center" FontSize="20" Cursor="Hand" Click="home_btn"/>
                                 </StackPanel>
 
 

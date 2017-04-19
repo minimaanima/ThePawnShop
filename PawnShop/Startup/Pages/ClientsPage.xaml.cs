@@ -140,5 +140,7 @@ namespace Startup.Pages
                 Switcher.Switch(new ContractsPage(contracts));
             }
         }
+
+       
     }
 }

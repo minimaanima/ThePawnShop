@@ -12,34 +12,264 @@
 
         <!-- Content -->
         <Grid>
+            <!-- Blue background image -->
+            <Grid.Background>
+                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="..\Images\backgroundSignIn.png" Opacity="0.5"/>
+            </Grid.Background>
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
             <!-- Top Menu -->
-            <Grid Height="75" Background="{StaticResource WordBlueBrush}">
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="7*" />
-                    <ColumnDefinition Width="7*" />
-                    <ColumnDefinition Width="5*" />
-                </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Height="75" Background="{StaticResource WordLightBlueBrush}">
 
                 <!-- Main buttons -->
-                <StackPanel  Grid.Column="1"  Orientation="Horizontal">
-                    <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeClientsIcon}" Click="clients_btn"/>
-                    <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeContractsIcon}" Click="contracts_btn" />
-                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeCogIcon}" Click="cashbox_btn" />
-                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeAddClientIcon}" Click="addclient_btn"/>
-                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeChangeUserIcon}" Click="changeuser_btn" />
+                <StackPanel  Grid.Column="1"  Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeClientsIcon}"  Cursor="Hand" Click="clients_btn" >
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <TextBlock FontWeight="Bold" FontSize="16" >Clients Page</TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeContractsIcon}" Cursor="Hand" Click="contracts_btn" >
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <TextBlock FontWeight="Bold" FontSize="16" >Contracts Page</TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeCogIcon}" Cursor="Hand" Click="cashbox_btn">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <TextBlock FontWeight="Bold" FontSize="16" >CashBox Page</TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeAddClientIcon}" Cursor="Hand" Click="addclient_btn">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <TextBlock FontWeight="Bold" FontSize="16" >Add Client Page</TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button  Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeChangeUserIcon}" Cursor="Hand" Click="changeuser_btn">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <TextBlock FontWeight="Bold" FontSize="16" >Change User Page</TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+            <!-- Operations -->
+            <Grid Grid.Row="1" Height="50" Background="{StaticResource WordDarkBlueBrush}">
+                <!-- Performed Opperations -->
+                <StackPanel  Grid.Column="1"  Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Button  Style="{StaticResource rectangleNavigationButton}" Content="Performed operations" Click="operations_btn" />
                 </StackPanel>
             </Grid>
 
             <!-- The user content -->
             <ContentPresenter Grid.Row="1" />
-            <Grid Grid.Row="1">
-                <Label>CashBox Page</Label>
+            <Grid Grid.Row="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="7*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--Money in cashbox -->
+                            <Grid Grid.Row="0">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <Border BorderThickness="1 1 0 1" BorderBrush="Black">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="2*"/>
+                                                    <RowDefinition Height="5*"/>
+                                                </Grid.RowDefinitions>
+                                                <Border BorderThickness="0 0 0 1" BorderBrush="Black">
+                                                    <TextBlock Grid.Row="0" Text="Cash availability" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" IsEnabled="False"/>
+                                                </Border>
+                                                <TextBlock x:Name="allCashAvailability" Grid.Row="1" Text="Cash availability" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" IsEnabled="False"/>
+                                            </Grid>
+                                        </Border>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+
+                            <!--Cash Out-->
+                            <Grid Grid.Column="1">
+                                <Border BorderBrush="Black" BorderThickness="1 1 0 1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="5*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="0 0 0 1">
+                                            <TextBlock IsEnabled="False" Text="Money out the bank (stilqn e velik)" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                        <Grid Grid.Row="1">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="2*"/>
+                                                    <ColumnDefinition Width="3*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid Grid.Column="0">
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="5*"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid Grid.Row="0">
+                                                            <Border BorderBrush="Black" BorderThickness="0 0 1 1">
+                                                                <TextBlock IsEnabled="False" Text="Opperation" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            </Border>
+                                                        </Grid>
+                                                        <Grid Grid.Row="1">
+                                                            <Border BorderBrush="Black" BorderThickness="0 0 1 1">
+                                                                <TextBlock IsEnabled="False" Text="Amount" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            </Border>
+                                                        </Grid>
+                                                        <Grid Grid.Row="2">
+                                                            <Border BorderBrush="Black" BorderThickness="0 0 1 1">
+                                                                <TextBlock IsEnabled="False" Text="Description" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            </Border>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid Grid.Column="1">
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="5*"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid Grid.Row="0">
+                                                            <Border BorderBrush="Black" BorderThickness="0 0 0 1">
+                                                                <ComboBox Background="White" FontSize="20" BorderThickness="0">
+                                                                    <ComboBoxItem IsSelected="True" Content="Iztegleni" />
+                                                                    <ComboBoxItem Content="Konsumativi"/>
+                                                                    <ComboBoxItem Content="Naem"/>
+                                                                    <ComboBoxItem Content="Zaplati"/>
+                                                                </ComboBox>
+                                                            </Border>
+                                                        </Grid>
+                                                        <Grid Grid.Row="1">
+                                                            <Border BorderBrush="Black" BorderThickness="0 0 0 1">
+                                                                <TextBox   HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" Padding="2 2 2 2"/>
+                                                            </Border>
+                                                        </Grid>
+                                                        <Grid Grid.Row="2">
+                                                            <Border BorderBrush="Black" BorderThickness="0 0 0 1">
+                                                                <TextBox x:Name="descriptionOut"  Text="Leave some description"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" Padding="2 2 2 2" GotFocus="descriptionOut_Focus"  LostFocus="descriptionOut_LostFocus" />
+                                                            </Border>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                        <Grid Grid.Row="2">
+                                            <Button  Style="{StaticResource rectangleNavigationButton}" Content="Take the fuckin Money Bitch"  />
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <!--Cash In-->
+                            <Grid Grid.Column="2">
+                                <Border BorderBrush="Black" BorderThickness="1 1 1 1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="5*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="0 0 0 1">
+                                            <TextBlock IsEnabled="False" Text="MOney in the bank nigga" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                        <Grid Grid.Row="1">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="2*"/>
+                                                    <ColumnDefinition Width="3*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid Grid.Column="0">
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="5*"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid Grid.Row="0">
+                                                            <Border BorderBrush="Black" BorderThickness="0 0 1 1">
+                                                                <TextBlock IsEnabled="False" Text="Opperation" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            </Border>
+                                                        </Grid>
+                                                        <Grid Grid.Row="1">
+                                                            <Border BorderBrush="Black" BorderThickness="0 0 1 1">
+                                                                <TextBlock IsEnabled="False" Text="Amount" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            </Border>
+                                                        </Grid>
+                                                        <Grid Grid.Row="2">
+                                                            <Border BorderBrush="Black" BorderThickness="0 0 1 1">
+                                                                <TextBlock IsEnabled="False" Text="Description" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            </Border>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid Grid.Column="1">
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="5*"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid Grid.Row="0">
+                                                            <Border BorderBrush="Black" BorderThickness="0 0 0 1">
+                                                                <TextBlock IsEnabled="False" Text="Opperation" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            </Border>
+                                                        </Grid>
+                                                        <Grid Grid.Row="1">
+                                                            <Border BorderBrush="Black" BorderThickness="0 0 0 1">
+                                                                <TextBox   HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" Padding="2 2 2 2"/>
+                                                            </Border>
+                                                        </Grid>
+                                                        <Grid Grid.Row="2">
+                                                            <Border BorderBrush="Black" BorderThickness="0 0 0 1">
+                                                                <TextBox Text="Leave some description" x:Name="descriptionIn"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18" GotFocus="descriptionIn_Focus"  LostFocus="descriptionIn_LostFocus"/>
+                                                            </Border>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                        <Grid Grid.Row="2">
+                                            <Button  Style="{StaticResource rectangleNavigationButton}" Content="Add Money Bitch"  />
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
             </Grid>
 
         </Grid>

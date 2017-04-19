@@ -8,7 +8,7 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="LoginPage">
 
-    <Border Background="{StaticResource WordBlueBrush}">
+    <Border Background="{StaticResource WordLightBlueBrush}">
         <Grid>
             <!-- Blue background image -->
             <Grid.Background>
@@ -43,19 +43,17 @@
                             <!-- Password -->
                             <Label Content="Password" FontSize="20" HorizontalAlignment="Center"/>
                             <PasswordBox x:Name="password" Tag="Password" Margin="0 0 0 30" Height="30" FontSize="20" />
-                            
+
 
                             <!-- Next button -->
-                            <Button Content="Submit" HorizontalAlignment="Center" FontSize="30" Click="login_Btn" />
-                            <Button Style="{StaticResource TextButton}" Content="Register" HorizontalAlignment="Center" FontSize="18" Click="register_btn" />
-
-                            <Label x:Name="TestBox" Content="Test"/>
+                            <Button Content="Sign In" HorizontalAlignment="Center" FontSize="30" Cursor="Hand" Click="login_Btn" />
+                            <Button Style="{StaticResource TextButton}" Content="Register" HorizontalAlignment="Center" FontSize="18" Cursor="Hand" Click="register_btn" />
 
                         </StackPanel>
-                        
+
                     </Border>
 
-                    
+
 
                 </StackPanel>
             </ScrollViewer>
