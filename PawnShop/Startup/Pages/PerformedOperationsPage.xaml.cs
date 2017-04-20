@@ -89,17 +89,25 @@ namespace Startup.Pages
             var fromDate = this.fromDate.Text;
             var toDate = this.toDate.Text;
 
-            var operations = StatisticFactory.GetOperations(fromDate, toDate);
-            myDataGrid.ItemsSource = operations;
-
-            var filtredOperations = StatisticFactory.GetFirstAndLastOperation(fromDate, toDate);
-            if (filtredOperations.Any())
+            try
             {
-                var firstOperation = filtredOperations.First();
-                var lastOperation = filtredOperations.Last();
-                this.amount.Text = firstOperation.CashBoxValueBefore.ToString();
-                this.amountAfter.Text = lastOperation.CashBoxValueAfter.ToString();
+                var operations = StatisticFactory.GetOperations(fromDate, toDate);
+                myDataGrid.ItemsSource = operations;
+
+                var filtredOperations = StatisticFactory.GetFirstAndLastOperation(fromDate, toDate);
+                if (filtredOperations.Any())
+                {
+                    var firstOperation = filtredOperations.First();
+                    var lastOperation = filtredOperations.Last();
+                    this.amount.Text = firstOperation.CashBoxValueBefore.ToString();
+                    this.amountAfter.Text = lastOperation.CashBoxValueAfter.ToString();
+                }
             }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            
         }
     }
 }

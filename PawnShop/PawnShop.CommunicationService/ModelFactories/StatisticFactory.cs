@@ -21,6 +21,12 @@ namespace PawnShop.CommunicationService.ModelFactories
 
                 var startDate = DateTime.Parse(startDateString);
                 var endDate = DateTime.Parse(endDateString);
+
+                if (startDate > endDate)
+                {
+                    throw new InvalidOperationException("Invalid data provided.");
+                }
+
                 var operations =
                     context.CashOperations.Where(c => c.CashBox.Office.Name == LoginUser.User.Office.Name &&
                                                       (SqlFunctions.DateDiff("day", c.DateTime, startDate).Value <= 0 &&
@@ -41,6 +47,12 @@ namespace PawnShop.CommunicationService.ModelFactories
 
                 var startDate = DateTime.Parse(startDateString);
                 var endDate = DateTime.Parse(endDateString);
+
+                if (startDate > endDate)
+                {
+                    throw new InvalidOperationException("Invalid data provided.");
+                }
+
                 var operations =
                     context.CashOperations.Where(c => c.CashBox.Office.Name == LoginUser.User.Office.Name &&
                                                       (SqlFunctions.DateDiff("day", c.DateTime, startDate).Value <= 0 &&

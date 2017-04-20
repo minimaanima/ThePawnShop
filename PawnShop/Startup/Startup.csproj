@@ -113,12 +113,6 @@
     <Compile Include="Pages\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\TestPage.xaml.cs">
-      <DependentUpon>TestPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\ViewContractPage.xaml.cs">
-      <DependentUpon>ViewContractPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ButtonColumns\ShowContractsButtonColumn.cs" />
     <Compile Include="SwitchingService\Switcher.cs" />
     <Compile Include="ValueConverters\ApplicationPageValueConverter.cs" />
@@ -176,14 +170,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\RegisterPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\TestPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\ViewContractPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

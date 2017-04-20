@@ -29,8 +29,6 @@ namespace Startup
                     return new AddClientPage();
                 case ApplicationPage.AddContractPage:
                     return new AddContractPage();
-                case ApplicationPage.ViewContractPage:
-                    return new ViewContractPage();
                 case ApplicationPage.RegisterPage:
                     return new RegisterPage();
 

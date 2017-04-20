@@ -192,8 +192,6 @@ D:\ThePawnShop\PawnShop\Startup\obj\Debug\Pages\ClientsPage.g.cs
 D:\ThePawnShop\PawnShop\Startup\obj\Debug\Pages\ContractsPage.g.cs
 D:\ThePawnShop\PawnShop\Startup\obj\Debug\Pages\LoginPage.g.cs
 D:\ThePawnShop\PawnShop\Startup\obj\Debug\Pages\RegisterPage.g.cs
-D:\ThePawnShop\PawnShop\Startup\obj\Debug\Pages\TestPage.g.cs
-D:\ThePawnShop\PawnShop\Startup\obj\Debug\Pages\ViewContractPage.g.cs
 D:\ThePawnShop\PawnShop\Startup\obj\Debug\App.g.cs
 D:\ThePawnShop\PawnShop\Startup\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\ThePawnShop\PawnShop\Startup\obj\Debug\Startup_MarkupCompile.cache
@@ -208,8 +206,6 @@ D:\ThePawnShop\PawnShop\Startup\obj\Debug\Pages\ClientsPage.baml
 D:\ThePawnShop\PawnShop\Startup\obj\Debug\Pages\ContractsPage.baml
 D:\ThePawnShop\PawnShop\Startup\obj\Debug\Pages\LoginPage.baml
 D:\ThePawnShop\PawnShop\Startup\obj\Debug\Pages\RegisterPage.baml
-D:\ThePawnShop\PawnShop\Startup\obj\Debug\Pages\TestPage.baml
-D:\ThePawnShop\PawnShop\Startup\obj\Debug\Pages\ViewContractPage.baml
 D:\ThePawnShop\PawnShop\Startup\obj\Debug\Styles\Buttons.baml
 D:\ThePawnShop\PawnShop\Startup\obj\Debug\Styles\Windows.baml
 D:\ThePawnShop\PawnShop\Startup\obj\Debug\Styles\Texts.baml
